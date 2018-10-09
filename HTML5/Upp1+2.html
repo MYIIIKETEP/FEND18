@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+  margin: 0px;
+}
+
+        #second
+        {
+background-color:blue;
+width:100px;
+height:100px;
+position:absolute ;
+top:30%;
+left:35%;   
+        }
+        #first
+        {
+background-color:yellow;
+width:300px;
+height:300px;
+position:absolute;
+left:35%;
+        }
+        </style>
+        <script>
+            function myFunction(i){
+            let ddd = document.getElementById(i);
+            let sss = document.getElementById('first');
+            sss.style.backgroundColor="yellow":
+            ddd.style.backgroundColor="blue";
+            console.log(ddd)
+            
+            }
+</script>
+<script>
+            function secondFunction(y){
+                let vvv= document.getElementById(y)
+                vvv.style.backgroundColor="black"
+                console.log(vvv)
+            }
+            </script>
+
+     
+        
+</head>
+<body>
+    <div id="first" onclick="secondFunction('second')">
+        
+    <div id="second" onclick="myFunction('first')">
+    </div>
+    </div>
+  
+  
+</body>
+</html>
