@@ -1,8 +1,9 @@
 "use strickt";
 document.write("Hello World");
 // Добавить часть HTML в какой либо уже существующий елемент
+let testar = new Array ("Test1","Test2","Test3");
 let el = document.getElementById("demo");
-el.innerHTML = "<h1>TEST</h1>";
+el.innerHTML = testar;
 
 let el2= document.getElementById("demo2");
 el2.textContent = "YeLLo";
