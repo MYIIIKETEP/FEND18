@@ -79,3 +79,9 @@ car.drive();
 car.brake();
 car.stop();
 
+let cars = new Array(2);
+cars[cars.length] = "Volvo";
+
+console.log(cars);
+console.log(cars.length);
+console.log(Array.isArray(cars));

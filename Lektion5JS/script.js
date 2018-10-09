@@ -14,7 +14,7 @@ let el = document.getElementById("demo");
 el.innerHTML = cars2;
 //Hur sort() fungerar - sorterar alphabesikt per default, men kan manipuleras
 function myFunction(){
-    cars2.sort()
+    cars2.reverse()
     let el2 = document.getElementById("demo")
     el2.innerHTML = cars2;
 }
