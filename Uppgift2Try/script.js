@@ -33,3 +33,14 @@ function bhOmkretsFunction(x,y) {
     var omkrets = (tal1*2) + (tal2*2);
     document.getElementById("demo2").innerHTML = "Omkretsen är " + omkrets;
 }
+
+function fToC() 
+{
+  var fTemp = prompt("skriv grader i farenheit");
+  var fToCel = (fTemp - 32) * 5 / 9;
+  var message = fTemp+'\xB0F is ' + fToCel.toFixed(3) + '\xB0C.';
+    alert(message);
+} 
+
+
+fToC();
