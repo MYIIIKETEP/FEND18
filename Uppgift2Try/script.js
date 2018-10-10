@@ -18,6 +18,7 @@ function multyDeviFunction() {
 
 
 //Del2 - Övning 2
+//Tal kommer från input från HTML
 
 function bhAreaFunction (x,y) {
 var tal1 = x;
@@ -34,13 +35,27 @@ function bhOmkretsFunction(x,y) {
     document.getElementById("demo2").innerHTML = "Omkretsen är " + omkrets;
 }
 
+
+
+//uppgift 3
 function fToC() 
 {
   var fTemp = prompt("skriv grader i farenheit");
   var fToCel = (fTemp - 32) * 5 / 9;
-  var message = fTemp+'\xB0F is ' + fToCel.toFixed(3) + '\xB0C.';
+  var message = fTemp+ " Är " + fToCel.toFixed(3) + " C";
     alert(message);
 } 
 
 
-fToC();
+//Uppgift 4
+let his = {
+    plan: 0,
+    goTo: function (x){
+    plan = x;
+    console.log("hissen går till plan "+ plan);
+    },
+    where: function (){
+        console.log("Hissen är på våning "+ plan)
+    }
+}
+
