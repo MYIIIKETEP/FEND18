@@ -84,4 +84,3 @@ cars[cars.length] = "Volvo";
 
 console.log(cars);
 console.log(cars.length);
-console.log(Array.isArray(cars));
