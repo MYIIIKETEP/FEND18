@@ -1,0 +1,150 @@
+1. DVCS - Distributed revision control systems. 
+Används mest för att detta settet tillåter att jobba mycket mer produktivt medans man är inte kopplad till internet. 
+Dem basic commandå som "commits/viewing history/reverting cahnges" är mycket snabbare i DVCS eftersom DVCS kräver inte koppling till centrala server. 
+Med DVCS behövs internet uppkoppling bara när man ska dela ändringar med dem andra.
+
+2+3+4+5+6. Funktion är något små programm som ska utföra nåt process som är inskriven i funktionen. T.ex. om du vill ha ett "+" funktion , som addearar 2 tall till varandra då istället för att skriva nya tal och addera dem, så kan man göra:
+function exempel(a,b){
+    var ett = a;
+    var tva = b;
+
+    summa = ett+tva;
+
+console.log(summa);
+return(summa);
+return [ett, tva] ;
+}
+
+exempel(2+2);
+
+7. JavaScript Anonym function är det funktionen som är skapad på ett annat set, så att säga dynamiskt.
+
+var AnonymMe = function()
+{
+  alert("One two three");
+}
+AnonymMe();
+
+8. Literal =
+var ett = {
+    test1 = "test",
+    test2 = "test2"
+}
+
+Construktor= 
+function Boo(name, test1, test2) {
+    this.name = name
+    this.test1= test1
+    this.test2 = test2
+}
+
+var testObj = new Boo(test,test2,test3)
+var testObj2 = new Boo(test,test2,test3)
+och vi kan göra det här flera gånger, dvs att vi kommer varje gång, använda oss av construktor, som vi har redan skapad , vi kommer mycket änklare skapa nya objek med samma mall
+
+9 + 10. Egenskaper av ett objekt är vad som finns inne i objektet t.ex
+var test1 = {
+    name = Denis,
+    lastname = Jakusjev,
+    try = function(){
+        console.log(name + " " + lastname)
+    }
+
+
+    console.log(name) - Som kommer att skriva ut egenskapen av denna objekt som har namnet "name" så konsol loggen kommer att ge oss "Denis"
+}
+
+test1.try() - Kommer att köra en METOD som vi har inne i objektet.
+
+
+
+
+Kodt uppgift2try.html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <input id = "x" name="x">
+    <input id = "y" name="y">
+    <button onclick="bhAreaFunction(document.getElementById('x').value, document.getElementById('y').value)">Area</button>
+    <button onclick="bhOmkretsFunction(document.getElementById('x').value, document.getElementById('y').value)">Omkrets</button>
+    <p id="demo2">Svar:</p>
+</body>
+<footer>
+    <script src="script.js"></script>
+</footer>
+</html>
+
+
+
+
+script.js:
+
+
+//Del2 - Övning 1
+
+function multyDeviFunction() {
+    var tal1 = prompt("Skriv tal 1");
+    var tal2 = prompt("Skriv tal 2");
+    var multy = tal1*tal2;
+    var devis = tal1/tal2;
+    if (tal1 != null && tal2 != null) {
+        document.getElementById("demo").innerHTML =
+        "Multiplikation av tal1 och tal2 = " + multy;
+        alert( "Multiplikation av tal1 och tal2 = " + multy);
+        alert( "Dev av tal1 och tal2 = " + devis);
+    }
+}
+//Om man matar in text, man får NaN som svar
+//Matar du in tal1 > 0 och tal2 = 0 , * ger 0 , / ger Infinity
+//tal1 = 0 tal2 = 0 , * ger 0 , / ger NaN
+
+
+//Del2 - Övning 2
+//Tal kommer från input från HTML
+
+function bhAreaFunction (x,y) {
+var tal1 = x;
+var tal2 = y;
+var arena = x*y;
+    document.getElementById("demo2").innerHTML = "Arean är" + arena;
+
+}
+
+function bhOmkretsFunction(x,y) {
+    var tal1 = x;
+    var tal2 = y;
+    var omkrets = (tal1*2) + (tal2*2);
+    document.getElementById("demo2").innerHTML = "Omkretsen är " + omkrets;
+}
+
+
+
+//uppgift 3
+function fToC() 
+{
+  var fTemp = prompt("skriv grader i farenheit");
+  var fToCel = (fTemp - 32) * 5 / 9;
+  var message = fTemp+ " Är " + fToCel.toFixed(3) + " C";
+    alert(message);
+} 
+
+
+//Uppgift 4
+let his = {
+    plan: 0,
+    goTo: function (x){
+    plan = x;
+    console.log("hissen går till plan "+ plan);
+    },
+    where: function (){
+        console.log("Hissen är på våning "+ plan)
+    }
+}
+
