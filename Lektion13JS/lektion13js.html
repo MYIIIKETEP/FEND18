@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+</body>
+<h1>BGColors</h1>
+<button onclick="bgRED()">Red</button> <br>
+<button onclick="bgGreen()">Green</button><br>
+<button onclick="bgBlue()">Blue</button><br>
+
+<h1>Add text to existant p</h1>
+<p id="firstp"></p><br>
+<button onclick ="changeText()">changeText</button>
+<button onclick ="hideText()">hideText</button><br>
+
+<p id ="clickme" onclick="clickmep()">Click me to hide</p>
+
+<p id ="mouseOverColor", onmousemove="overMeMouse()">MouseoverMe</p>
+<p onmousemove="this.style.color='green'">MouseoverMe</p>
+
+Username:
+<input type="text" id="username">
+password:
+<input type="password" id="password">
+<button id="Login" onclick="login()">Login</button>
+<p id="feedback"></p>
+
+
+<footer>
+    <script src = script.js></script>
+</footer>
+</html>
