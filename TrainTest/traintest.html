@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   
+</head>
+<body>
+    <p id="text"></p>
+</body>
+<footer>
+        <script>
+        
+                while(true){
+                let birthdate = prompt("ÅÅÅÅ-MM-DD", "1973-01-01");
+                console.log(birthdate);
+                
+                //Om användaren klickar på avbryt eller klickar på escape
+                if(birthdate === null){
+                    break;
+                }
+                
+                //Kolla exakta antalet
+                    // if(birthdate.lenght !== 10  ){
+                    //     alert("Felaktigt antal tecken!");
+                    //     //и запускаем опять промт
+                    //     continue;
+                    // }
+
+                if(birthdate.charAt(4) !== '-')
+                {
+                    alert("första "-" saknas");
+                    continue;
+                }
+                if(birthdate.charAt(7)!== '-')
+                {
+                    alert("andra '-' saknas!");
+                    continue;
+                }
+                //bdarray [0] = år , [1] = måndam ,[2] = dag
+                let bdarray = birthdate.split("-");
+
+                let year = bdarray[0];
+                year = Number(year);
+                //проверка, если объект не являеться Number
+                if(isNaN(year)){
+                    alert("Du skrev in felaktig år");
+                    continue;
+                }
+                let month = bdarray[1]
+                month = Number(month);
+                if(isNaN(month) || month < 1 || month > 12){
+                    alert("Du skrev in felaktig mådan");
+                    continue;
+                }  
+
+                let day = bdarray[2];
+                day = Number(day);
+                if(isNaN(day) || day < 1 || day > 31){
+                    alert("Du skrev in felaktig dag");
+                    continue;
+                }
+            
+                let now = new Date();
+                let nowYear = now.getFullYear();
+                //Возвращает 0-11
+                let nowMonth = now.getMonth();
+                nowMonth = nowMonth + 1;
+                let nowDate = now.getDate();
+
+                console.log (nowYear, nowMonth, nowDate);
+                let years = nowYear - year;
+                
+                let months = nowMonth - month;
+                if(months < 0){
+                    years--;
+                    months += 12;
+                }
+                let days = nowDate - day;
+                if(days < 0){
+                    months--;
+                    days+=31
+                }
+                console.log(years);
+                console.log(months);
+                console.log(days);
+
+                let el = document.getElementById("text");
+                el.innerHTML("Du är " + years + "år, " + month + "månader och " + days + " dagar gammal");
+                break;
+            }
+                
+                
+                
+                
+        </script>
+</footer>
+</html>
