@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            figure {
+             background: #d9dabb; /* Цвет фона */
+             display: block; /* Блочный элемент */
+             width: 150px; /* Ширина */
+             height: 190px; /* Высота */
+             float: left; /* Блоки выстраиваются по горизонтали */
+             margin: 0 10px 10px 0; /* Отступы */
+             text-align: center; /* Выравнивание по центру */
+            }
+            figure img {
+             border: 2px solid #8b8e4b; /* Параметры рамки */
+            }
+            figure p {
+             margin-bottom: 0; /* Отступ снизу */
+            }
+           </style>
+</head>
+<body>
+    <!-- img - о том что хочеться показать картинку scr откуда картинку взять -->
+    <img src="images/png.png" alt="PNG"><br>
+
+    <!--  -->
+    <!-- alt покажет текст если картинка не существует
+    титул покажет название/текст картинки если его задать(при маусовере)-->
+    <img src ="images/jpg.jpeg"
+    alt="jpeg"
+    title="Jpeg easy"><br>
+
+    <!--  -->
+    <!-- Добавим размер width и height -->
+    <img src ="images/GIF.gif"
+    alt="GIF"
+    title="GIF"
+    width="500"
+    height="300"><br>
+    <!--  -->
+    <!-- Пока в figure есть элементы, не важен их размер или позиционка, figcaption идёт как описание прилепленное к картинке -->
+    <figure>
+            <img src ="images/jpg.jpeg"
+            alt="jpeg"
+            title="Jpeg easy"
+            width="100"
+            height="100"><br>
+            <figcaption>
+                Sea otters hold hands when they sleep so they don't drift away from each other. 
+            </figcaption>
+
+    </figure><br>
+    <!--  -->
+    <!-- TABEL таблицы th Отвечает за загаловки / кол-во объктов в таблице
+    tr линия в таблиц
+    td объкт/текст в tr -->
+    <table border="1">
+            <tr> <th>Dag</th> <th>Aktivitet</th></tr>
+            <tr> <td>måndag</td> <td> </td> </tr>
+            <tr> <td>tisdag</td> <td> </td> </tr>
+            <tr> <td colspan="2">onsdag</td> </tr>
+            <tr> <td>torsdag</td> <td> </td> </tr>
+            <tr> <td>fredag</td> <td> </td> </tr>
+            </table><br>
+
+    <!--  -->
+    <!--Scope Даёт возможность создать загаловки с разных вертикалей / горизанталей  -->
+    <table>
+            <tr>
+            <th></th>
+            <th scope="col">Saturday</th>
+            <th scope="col">Sunday</th>
+            <th scope="col">Third Columt</th>
+            </tr>
+            <tr>
+                <th scope="row">Tickets sold:</th>
+                <td>120</td>
+                <td>135</td>
+                <td>for Third</td>
+            </tr>
+            <tr>
+                <th scope="row">Total sales:</th>
+                   <td>$600</td>
+                   <td>$675</td>
+                   <td>for thirdAgain</td>
+            </tr>
+            <tr>
+            <th scope="row">JTMS igt</th>
+                  <td>100€</td>
+                  <td>200€</td>
+                  <td>300€</td>
+            </tr>
+            </table>
+<!--  -->
+<!-- Övning 2 -->
+<table border="1">
+    <tr> <th> </th> <th>9am</th> <th>10am</th> <th>11am</th> <th>12am</th></tr>
+    <tr> <td>monday</td> <td colspan="2">Geography<td>math</td> <td>art</td></tr>
+    <tr> <td>Tuesday</td><td colspan="3">Gym</td> <td>Home EC</td></tr>
+</table>
+
+<!--  -->
+<!-- Övning 3 -->
+
+
+<table>
+    <tr>
+        <th></th>
+        <th scope="col">Home Starter hosting</th>
+        <th scope="col">Premium Business hosting</th>
+    </tr>
+    <tr>
+        <th scope="row">Disc Space</th>
+        <td>250mb</td>
+        <td>1gb</td>
+    </tr>
+    <tr>
+        <th scope="row">Bandwidth</th>
+        <td>5gb per month</td>
+        <td>50gb per month</td>
+
+    </tr>
+    <tr>
+            <th scope="row">Email Accounts</th>
+            <td>3</td>
+            <td>10</td>
+    
+        </tr>  
+        <tr>
+                <th scope="row">Server</th>
+                <td>Shared</td>
+                <td>VPS</td>
+        
+        </tr>  
+        <tr>
+                    <th scope="row">Support</th>
+                    <td>Email</td>
+                    <td>Telephone and Email</td>
+            
+        </tr>  
+        <tr>
+                        <th scope="row">Setup</th>
+                        <td>Free</td>
+                        <td>Free</td>
+                
+        </tr>  
+        <tr>
+                        <th scope="row">FTP Accounts</th>
+                        <td>1</td>
+                        <td>5</td>
+                    
+        </tr>
+        <tr>
+            <th scope="row">
+            <td>Sign up and save 10%!</td>
+            </th>
+        </tr>
+</table>
+
+</body>
+</html>
