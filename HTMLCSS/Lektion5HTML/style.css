@@ -1,0 +1,17 @@
+body {
+    background-color: black;
+}
+.test1{
+    color:blue;
+    text-align: center;
+}
+
+.test2{
+color:red;
+text-align: right;
+}
+/* For class parameters */
+.text-center{
+    color:green;
+    text-align: left;
+}

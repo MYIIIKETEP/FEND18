@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    /* flex-direction row/colums */
+    flex-direction: column;
+    /* justify-content уточнение как должен разпологаться контент в контейнере */
+    border:1px dotted purple;
+    }
+
+    /* > показывает мол ВСЕ дивы в этом контейнере */
+    .container > div {
+    background-color: orange;
+    margin: 10px;
+    padding: 10px;
+    }
