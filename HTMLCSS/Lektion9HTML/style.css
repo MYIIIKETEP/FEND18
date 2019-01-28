@@ -1,7 +1,7 @@
 .container {
     display: flex;
     /* flex-direction row/colums */
-    flex-direction: column;
+    flex-direction: row;
     /* justify-content уточнение как должен разпологаться контент в контейнере */
     border:1px dotted purple;
     }

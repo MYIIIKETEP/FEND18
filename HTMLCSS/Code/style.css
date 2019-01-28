@@ -6,10 +6,13 @@ body {
     font-size: 16px;
 
   }
-  article,  figure, footer, header, main, menu, nav, section, summary {
+  /* Див - использует блок по дефолту, для всех новых елементов ХТМЛ5 застовляем их блоками
+  Блок - заствляет себя вести как див  */
+  footer, header, nav, section {
     display: block;
 }
-
+/* Все заголовки нужно писать в h1(подобные) для гугл роботов/CEO
+По факту должен быть только 1 H1 на сайт. */
   h1,
   h2,
   h3,
@@ -20,31 +23,34 @@ body {
     font-weight: 700;
     color: #17baef;
   }
+  
   a {
     color: #17baef;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -ms-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
   }
   a:hover {
     text-decoration: underline;
-    color: #0e98c5;
+    
   }
-
+/* Контейнер используеться для ограничения ширины содержимого ОБС
+тут ограничители вынесены в медию */
   .container {
     padding: 0 15px;
     margin-right: auto;
     margin-left: auto;
     display: block;
 }
+/* Чтобы в любом блоке/коде сразу отцентровать текст задвая данный класс */
 .text-center {
     text-align: center;
 }
-
+/* внутри этого класса, все будет юзать функцую flex ОБС почитать на сайте */
 .wrapper {
     display: -ms-flexbox;
-    display: flex;
+    display: flex;   
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
@@ -61,6 +67,7 @@ body {
     padding: 10px 0;
     background: #17baef;
     color: #fff;
+    /* Прикрепляет хедер к топу страницы, далее хедер следует за скроллом */
     position: fixed;
     width: 100%;
     z-index: 100;
@@ -104,7 +111,7 @@ body {
     padding: 15px 10px;
   }
   .header .main-nav .nav .nav-item a:hover {
-    color: #074f66;
+    color: green;
     background: none;
   }
   .header .main-nav .nav .nav-item a:focus {
@@ -112,9 +119,7 @@ body {
     background: none;
   }
 
-  .header .main-nav .nav .nav-item.last {
-    margin-right: 0;
-  }
+
 
 
   /* ======= Promo Section ======= */
@@ -122,6 +127,7 @@ body {
     background: #17baef;
     color: #fff;
     padding-top: 150px;
+    padding-bottom: 30px;
   }
   .promo .title {
     font-size: 98px;
@@ -135,40 +141,9 @@ body {
     font-size: 28px;
     max-width: 680px;
     margin: 0 auto;
-    margin-bottom: 30px;
+    
   }
-  .promo .btns .btn {
-    margin-right: 15px;
-    font-size: 18px;
-    padding: 8px 30px;
-  }
-  .promo .meta {
-    margin-top: 120px;
-    margin-bottom: 30px;
-    color: #0a7396;
-  }
-  .promo .meta li {
-    margin-right: 15px;
-  }
-  .promo .meta a {
-    color: #0a7396;
-  }
-  .promo .meta a:hover {
-    color: #074f66;
-  }
-  .promo .social-media {
-    background: #0c86ae;
-    padding: 10px 0;
-    margin: 0 auto;
-  }
-  .promo .social-media li {
-    margin-top: 15px;
-  }
-  .promo .social-media li.facebook-like {
-    margin-top: 0;
-    position: relative;
-    top: -5px;
-  }
+ 
   /* ======= About Section ======= */
   .about {
     padding: 80px 0;
@@ -227,7 +202,7 @@ body {
     color: #fff;
   }
 
-  @media  screen and (min-width: 768px) {
+  @media  screen and (min-width: 768px) and (max-width: 991px) {
     .container {
         width: 750px;
     }
@@ -249,7 +224,7 @@ body {
     }
     }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 992px)  {
 .container {
     width: 970px;
 }
