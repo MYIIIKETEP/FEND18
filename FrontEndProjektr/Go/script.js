@@ -3,22 +3,22 @@ const imgs = document.querySelector('.imgs');
 const img = document.querySelectorAll('.imgs img');
 const opacity = 0.6;
 
-// Set first img opacity
+// opacity på första IMG
 img[0].style.opacity = opacity;
 
 imgs.addEventListener('click', imgClick);
 
 function imgClick(e) {
-  // Reset the opacity
+  // ReSätta opacity 
   img.forEach(img => (img.style.opacity = 1));
 
-  // Change current image to src of clicked image
+  // byta imgs src
   current.src = e.target.src;
 
-  // Add fade in class
+  // lägga till fade
   current.classList.add('fade-in');
 
-  // Remove fade-in class after .5 seconds
+  // ta bort fade in efter 0.5 sec så gör vi effecten
   setTimeout(() => current.classList.remove('fade-in'), 500);
 
   // Change the opacity to opacity var
