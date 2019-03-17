@@ -15,6 +15,13 @@
         </header>
         <div class="MainBar">
           <h2>PhotoGallery med 0.5 fade</h2>
+          <!-- Denna "Color picker" är bara en tagen library från http://jscolor.com/ -->
+          <div class="Color">
+            <script src="jscolor.js"></script>
+	          <h2>Pick a color:</h2>
+            Color: <input id="jscolor1" class="jscolor" value="ab2567">
+            <button type="button" onclick="changeColor()">Click me</button>
+          </div>
         </div>
         <div class="container">
             <div class="main-img">
@@ -30,8 +37,10 @@
               <img src="https://preview.ibb.co/goKtGw/img6.jpg">
               <img src="https://preview.ibb.co/bSWjOb/img7.jpg">
               <img src="https://preview.ibb.co/i2o9pG/img8.jpg">
+              
             </div>
           </div>
+          
     </div>
 </body>
 <footer><script src="script.js"></script></footer>

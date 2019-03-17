@@ -24,3 +24,14 @@ function imgClick(e) {
   // Change the opacity to opacity var
   e.target.style.opacity = opacity;
 }
+// Med hjälp av jscolor Color picker, tar fram färgen som behövs och sedan ändrar med click bakgrundsfärgen
+//som kravspecen kräver
+function changeColor(){
+  var color = document.getElementById("jscolor1");
+  var number = color.value;
+  
+  console.log(number);
+  document.body.style.backgroundColor = "#" + number;
+ 
+}
+
