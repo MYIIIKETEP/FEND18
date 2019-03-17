@@ -211,9 +211,9 @@ body {
     }
 
     #about .column {
-        -ms-flex: 0 0 50%;
-        flex: 0 0 50%;
-        max-width: 50%;
+        -ms-flex: 0 0 33.333%;
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
     }
     #history .column.column-left {
         -ms-flex: 0 0 30%;
@@ -242,14 +242,21 @@ body {
     max-width: 25%; 
 }
 #history .column.column-right {
-    -ms-flex: 0 0 75%;
-    flex: 0 0 75%;
-    max-width: 75%; 
+
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
 }
 }
 
 @media screen and (min-width: 1200px) {
 .container {
     max-width: 1170px;
+}
+
+#history .column.column-right {
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%; 
 }
 }

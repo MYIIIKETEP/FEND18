@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Unlock" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> 
+    <link href="favico.ico" rel="icon" type="image/x-icon" />
+
+    <link href="style.css" rel="stylesheet">
+    <title>XHTML</title>
+</head>
+<body>
+        <header id="header" class="header">  
+             <div class="container">   
+            <h1 class="logo pull-left">
+                    <a class="scrollto" href="index.html">
+                       <img src="logo.png" class="logo-title" height="30">
+                    </a>
+                </h1>
+            <nav id="main-nav" class="main-nav">
+                        <ul class="nav">
+                            <li class="nav-item"> <a href="index.html" target="_blank">Home</a></li>
+                            <li class="nav-item"><a href="xhtml.html" target="_blank">XHTML</a></li>
+                            <li class="nav-item"><a href="xml.html" target="_blank">XML</a></li>
+                        </ul>
+                </nav>
+
+        
+           
+                </div>
+    </header>
+      
+
+        
+ 
+    <section id="history" class="about section">
+            <div class="container">
+                <h2 class="title text-center">XHTML (Extensible HyperText Markup Language)</h2>
+                <div class="wrapper">
+                    <div class="string">                  
+                        <div class="column column-left">
+                            <div class="content">
+                                <h3 class="sub-title">Anledning</h3>
+                            </div>
+                        </div>
+
+                    <div class="column column-right">
+                        <div class="content">
+                            <p><span class="boldme">I mindre</span>, mobila enheter som mobiltelefoner är det viktigt att inte slösa på resurser för onödiga uppgifter. 
+                                En av dessa uppgifter var att tolka den komplexa HTML-syntaxen. För att göra all information på Internet mer tillgänglig för fler mottagare krävdes därför ett nytt och striktare språk. 
+                                Därför skapades XHTML, som tack vare den striktare syntaxen inte krävde lika mycket arbete från tolken.<br>
+                                <p><span class="boldme">Eftersom HTML</span> "tillät" fel så kämpade tolkarna oftast med att korrigera de fel som koden innehöll. Detta drog massa extra kraft och bidrog till att felaktig kod inte upptäcktes lika lätt.
+                                 Med XHTML så är det rekommenderat att tolken genast slutar rendera koden och visar ett felmeddelande så fort ett fel upptäcks. Detta kan få till följd att sidan inte visas alls om den innehåller fel (som i Firefox), eller att den bara visar informationen fram till felet (som i Safari).
+                                 På så sätt krävs det inte lika mycket arbete av en XHTML-tolk som en HTML-tolk.<br></p>
+                                <p><span class="boldme">Förutsättningen för att tolkarna</span>skall använda detta effektivare tolkningsläge är att koden skickas med rätt MIME-deklaration. I praktiken sker det sällan, och majoriteten av marknadens mobila webbläsare tolkar de facto XHTML som om det vore "tagg-gröt"</p>
+                        </p>
+                        </div>
+                    </div>
+                </div>  
+                <div class="string">  
+                        <div class="column column-left">
+                                <div class="content">
+                                        <h3 class="sub-title">Skillnader mot HTML</h3>
+                                </div>
+                            </div>
+        
+                            <div class="column column-right">
+                                <div class="content">
+                                    <p> <span class="boldme">Skillnaderna mellan HTML och XHTML 1.0</span> syftar till största del att skapa XML-kompatibilitet. 
+                                            Detta kräver att dokumentet ska vara välformaterat. Med detta menas bland annat att alla element alltid måste stängas och inte får nästlas så att de överlappar varandra. 
+                                            Även tomma elementtyper måste stängas. XML är även skiftlägeskänsligt och därför kräver XHTML, per definition, att alla element- och attributnamn skrivs med gemener. 
+                                            Attributnamn måste dessutom inneslutas inom citationstecken (enkel ' eller dubbel ") och får inte förkortas. 
+                                            <<span class="red"> INPUT</span> checked> är därför felaktigt, <<span class="red">input</span> <span class="green">checked</span>="checked" /> är av samma anledning korrekt.</p><br>
+
+
+                                            <p><span class="boldme">XHTML är utbyggbart (eXtensible)</span> i den meningen att man med hjälp av namnrymder kan använda element och attribut som inte tillhör XHTML-standarden. 
+                                                Det är en klar skillnad och förbättring från den tidigare HTML-standarden som bara tillät ett fixerat antal element.
+                                                 Exempel på namnrymder som kan blandas med XHTML är SVG, för att märka upp vektorgrafik, och MathML, för att beskriva matematiska uttryck. 
+                                                På så sätt kan dessa tolkas direkt i en webbläsare och man hoppas genom detta slippa webbläsarspecifika tillägg till XHTML-standarden.</p>
+                                </div>
+                            </div>
+                </div>  
+                <div class="string">    
+                            <div class="column column-left">
+                                    <div class="content">
+                                            <h3 class="sub-title">Övergången</h3>
+                                    </div>
+                                </div>
+            
+                                <div class="column column-right">
+                                    <div class="content">
+                                        <p><span class=boldme>Likheten mellan XHTML och HTML</span> gjorde att många webbutvecklare tidigt gick över till det nya formatet. Många webbläsare som skrivits för vanlig HTML kan nämligen presentera XHTML-dokument om det uppfyller vissa krav. 
+                                            Det innebär att dokument skrivna med XHTML är tillgängliga för alla, även med äldre läsare. 
+                                            Om detta ska vara möjligt kan man inte använda några XHTML-specifika egenskaper och därför skapade W3C Appendix C med punkter som måste följas. 
+                                            Om dessa följs så kan en gammal läsare tolka XHTML-dokumentet som ett vanligt HTML-dokument.
+                                  
+                                    </div>
+                                </div>
+                                
+								
+								
+                </div>
+              
+                        
+                        
+                        
+        
+				 
+                
+                </div>           
+            </div>
+        </section>
+
+    <footer class="footer">
+        <div class="container">
+                <div class="footer-copyright">
+                     <span>© Denis Jakusjev</span>
+                    </div>
+         </div>
+    </footer>
+
+</body>
+</html>
