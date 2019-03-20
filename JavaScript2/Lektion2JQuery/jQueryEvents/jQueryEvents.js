@@ -11,7 +11,7 @@ $("#demo").mouseout(function(){
 //Samma i guess?
 $(function(){
     $("#demo2").mousedown(function(){
-    $(this).html("Demo på mouseenter!");
+    $(this).html("Demo på mousdown!");
     });
     $("#demo2").mouseup(function(){
         $(this).html("Demo på mouseup!");
@@ -41,4 +41,60 @@ function out2(){
         "color": "green"
     });
 };
+
+
+
+//Focus - när man är focuserad på den - utföra
+//blur - när man går ut från fältet - utföra
+$(function(){
+$("input").focus(function(){
+$(this).css("background-color", "green");
+});
+$("input").blur(function(){
+$(this).css("background-color", "red");
+});
+});
+
+
+$(function(){
+$("#itsOn").on("click", function(){
+$(this).html("The click is OOON");
+});
+$("#itsOn").on("dblclick", function(){
+$(this).html("dblClick is ON");
+});
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

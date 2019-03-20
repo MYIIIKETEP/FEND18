@@ -33,6 +33,9 @@ $(function(){
 $(function(){
     $("#toggleClass").click(function(){
     $("p").toggleClass("blue");
-    console.log("Removed");
+    $(this).text(function(i,text){
+      return text == "ToggleOff" ? "ToggleOn" : "ToggleOffx" ;
+    console.log("Toggled");
     });
   });
+});
