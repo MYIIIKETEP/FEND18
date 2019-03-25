@@ -1,45 +1,122 @@
 
-
+var CHEKMEPLEASE;
 var xhr;
+
 if (window.XMLHttpRequest) xhr = new XMLHttpRequest(); 		// all browsers except IE
-else xhr = new ActiveXObject("Microsoft.XMLHTTP"); 		// for IE
- 
-xhr.open('GET', 'data.json', true);
+else xhr = new ActiveXObject("Microsoft.XMLHTTP"); 	
+
+// for IE
 xhr.onreadystatechange = function () {
 	if (xhr.readyState===4 && xhr.status===200) {			
 		var items = JSON.parse(xhr.responseText);
 		var output = "";
+		
 		for (var key in items) {
-			output += "<div id=items class='col-md-3 id"+ items[key].id +"'>" + "<span id=thisId style=display:none>"+ items[key].id +"</span>"+ "<h3 id=name>"+items[key].name + '</h3>' 
-			+ "<p>Pris: " + "<span id=price>"+ items[key].price + "</span></p>" +  "<button class= addToCart>ToCart</button>"+ "</div>";
+			output += "<div id=items class='col-md-3 id"+ items[key].id +"'>" + "<span id=thisId style=display:none>"+ items[key].id +"</span>"+ "<h3>"+items[key].name +'</h3>' 
+			+ "<p>Pris: "+ items[key].price + "</p>" +  "<button class= addToCart>ToCart</button>"+ "<button class=remove>Remove</button>"+ "</div>";
+			
 			
 		};
+
+		load();
+		
+	  
 		
 		document.getElementById('flip').innerHTML = output;
-	}
+		
 }
+}
+xhr.open('GET', 'data.json', false);
 xhr.send();
 
+
+//AddItem/AddQunt
 $(function(){
-    $("#ClickMe").click(function(){
-        $("#panel").slideToggle("fast");
-    });
-  });
+	$(".addToCart").click(function(){
+	
+	var myDiv = $(this).parent();
+	var id = $(myDiv).find("#thisId").text();
+	id = parseInt(id);
+	var getItem = JSON.parse(xhr.responseText);
+	var thisitem = getItem[id];
+	
+	let thisItem_serialized = JSON.stringify(thisitem);
+	if(localStorage.getItem(id) == null){
+		localStorage.setItem(id,thisItem_serialized);
+	  $(myDiv).find(".remove").css("display","inline");
+		console.log("Added new item");
+		load();
+		
+		
+	}
+	else{
+		let backtoJson = JSON.parse(localStorage.getItem(id));
+		localStorage.removeItem(id);
+		let getQuant = backtoJson.quantity;
+		let plusOne = parseInt(getQuant) + 1;
+		backtoJson.quantity = plusOne.toString();
+		let backtoJson_ser = JSON.stringify(backtoJson);
+		localStorage.setItem(id,backtoJson_ser);
+		console.log(backtoJson.quantity);
+	  load();
+		
+		
+		
+	}
+	})
+})
+
+	
+
+$(function(){
+	$(".remove").click(function(){
+		var myDiv = $(this).parent();
+		var id = parseInt($(myDiv).find("#thisId").text());
+		let backtoJson = JSON.parse(localStorage.getItem(id));
+		localStorage.removeItem(id);
+		let getQuant = backtoJson.quantity;
+		let plusOne = parseInt(getQuant) - 1;
+		backtoJson.quantity = plusOne.toString();
+		let backtoJson_ser = JSON.stringify(backtoJson);
+		try{
+		if(plusOne==0){
+			localStorage.removeItem(id)
+			$(this).css("display","none");
+		}
+		else{
+		localStorage.setItem(id,backtoJson_ser);
+		console.log(backtoJson.quantity);
+		}
+		load();
+		console.log(id);
+	} 
+	  catch(err){
+    console.log(err.message);
+		}
+	
+	
+	})
+	});
 
 
-  $(function(){
-	  $(".addToCart").click(function(){
-	  var myDiv = $(this).parent();
-	  var name = $(myDiv).find("#name").text();
-	  var price =$(myDiv).find("#price").text();
-	  var id = $(myDiv).find("#thisId").text();
-	  console.log(id);
-	  console.log(name);
-	  console.log(price);
-	 
-	  
-	  })
-  })
+  
+function load(){
+	var output2 = "";
+	for (var i = 0; i < localStorage.length; i++) {
+				
+		var key = localStorage.key(i);
+		let goJSON = JSON.parse(localStorage.getItem(key));
+		let lonelyPrice = goJSON.price;
+		let lonelyQuant = goJSON.quantity;
+		totalPrice = parseInt(lonelyPrice)*parseInt(lonelyQuant);
+				
+		output2 += "<tr>" +"<td id='thisId' style=display:none>"+goJSON.id+ "</td>" + "<td>"+goJSON.name + "</td>" + "<td>" + totalPrice + "</td>" + "<td>" +goJSON.quantity  + "</td>" + "<td>"
+		 + "</tr>";
+				
+		
+			  };
+			  
 
+			  document.getElementById('itsTboDy1').innerHTML = output2;
+};
 
-  //add quantity to 
