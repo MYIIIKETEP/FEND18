@@ -2,6 +2,7 @@
 var CHEKMEPLEASE;
 var xhr;
 
+
 if (window.XMLHttpRequest) xhr = new XMLHttpRequest(); 		// all browsers except IE
 else xhr = new ActiveXObject("Microsoft.XMLHTTP"); 	
 
@@ -17,7 +18,7 @@ xhr.onreadystatechange = function () {
 			
 			
 		};
-
+        
 		load();
 		
 	  
@@ -44,7 +45,8 @@ $(function(){
 	if(localStorage.getItem(id) == null){
 		localStorage.setItem(id,thisItem_serialized);
 	  $(myDiv).find(".remove").css("display","inline");
-		console.log("Added new item");
+		console.log("add");
+		console.log(localStorage.length);
 		load();
 		
 		
@@ -73,7 +75,6 @@ $(function(){
 		var myDiv = $(this).parent();
 		var id = parseInt($(myDiv).find("#thisId").text());
 		let backtoJson = JSON.parse(localStorage.getItem(id));
-		localStorage.removeItem(id);
 		let getQuant = backtoJson.quantity;
 		let plusOne = parseInt(getQuant) - 1;
 		backtoJson.quantity = plusOne.toString();
@@ -82,13 +83,19 @@ $(function(){
 		if(plusOne==0){
 			localStorage.removeItem(id)
 			$(this).css("display","none");
+			if(localStorage.length == 0){
+				document.getElementById('itsTboDy1').innerHTML = "";
+				$("#buy").attr("disabled",true);
+			}
+			
+			
 		}
 		else{
+		localStorage.removeItem(id);
 		localStorage.setItem(id,backtoJson_ser);
 		console.log(backtoJson.quantity);
 		}
 		load();
-		console.log(id);
 	} 
 	  catch(err){
     console.log(err.message);
@@ -99,24 +106,31 @@ $(function(){
 	});
 
 
-  
+
 function load(){
+	
 	var output2 = "";
+	
 	for (var i = 0; i < localStorage.length; i++) {
-				
+	    
 		var key = localStorage.key(i);
 		let goJSON = JSON.parse(localStorage.getItem(key));
 		let lonelyPrice = goJSON.price;
 		let lonelyQuant = goJSON.quantity;
 		totalPrice = parseInt(lonelyPrice)*parseInt(lonelyQuant);
-				
 		output2 += "<tr>" +"<td id='thisId' style=display:none>"+goJSON.id+ "</td>" + "<td>"+goJSON.name + "</td>" + "<td>" + totalPrice + "</td>" + "<td>" +goJSON.quantity  + "</td>" + "<td>"
 		 + "</tr>";
-				
 		
-			  };
-			  
-
+		 let find = "#id"+goJSON.id;
+		 if(localStorage.length==0){
+			 $("#buy").attr("disabled",true);
+		 }
+		 else{
+			$("#buy").removeAttr("disabled");
+		 }
+		 
+			 
+           console.log(find);
 			  document.getElementById('itsTboDy1').innerHTML = output2;
 };
-
+}
