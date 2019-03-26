@@ -50,7 +50,7 @@ $(function(){
         if(name.length && pass.length && telnum.length >= 3){
             $(".message").css("display","none");
             let newFormPlace ="Hej " + "<b>" + name + "</b>!<br> Du kan se allt du har handlat till vänster.<br>Totala kostnaden blev: <b>"+ totalPriceFull+"kr</b> <br>All infroamtion har blivit skickat till <b>"+pass+"</b><br>Om vi kommer ha extra frågor till dig då ringer vi upp numret som du har skrivit: <b>"+ telnum +"</b><br><a href=index.html><button id=backToStore>BackToStore</button></a>";
-
+          
             load();
             localStorage.clear();
             document.getElementById("thisToChange").innerHTML= newFormPlace;

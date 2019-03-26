@@ -121,12 +121,14 @@ function load(){
 		output2 += "<tr>" +"<td id='thisId' style=display:none>"+goJSON.id+ "</td>" + "<td>"+goJSON.name + "</td>" + "<td>" + totalPrice + "</td>" + "<td>" +goJSON.quantity  + "</td>" + "<td>"
 		 + "</tr>";
 		
-		 let find = "#id"+goJSON.id;
+		
 		 if(localStorage.length==0){
 			 $("#buy").attr("disabled",true);
+			
 		 }
 		 else{
 			$("#buy").removeAttr("disabled");
+			
 		 }
 		 
 			 
