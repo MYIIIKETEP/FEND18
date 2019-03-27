@@ -118,7 +118,7 @@ function load(){
 		let lonelyPrice = goJSON.price;
 		let lonelyQuant = goJSON.quantity;
 		totalPrice = parseInt(lonelyPrice)*parseInt(lonelyQuant);
-		output2 += "<tr>" +"<td id='thisId' style=display:none>"+goJSON.id+ "</td>" + "<td>"+goJSON.name + "</td>" + "<td>" + totalPrice + "</td>" + "<td>" +goJSON.quantity  + "</td>" + "<td>"
+		output2 += "<tr>" +"<td id='thisId' style=display:none>"+goJSON.id+ "</td>" + "<td>"+goJSON.name + "</td>" + "<td>" + totalPrice + "</td>" + "<td>" +goJSON.quantity + "</td>" + 
 		 + "</tr>";
 		
 		

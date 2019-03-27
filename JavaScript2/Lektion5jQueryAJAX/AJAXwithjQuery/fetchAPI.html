@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <h1>FetchDemo</h1>
+    <div id=lol>
+    
+
+    </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script>
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then(response => response.json())
+            .then(data => showUser(data))
+
+
+            // {
+            //     console.log(data)
+            //     for (i = 0; i < data.length; i++) {
+            //         $("#lol").append(`${data[i].name}<br>`);
+
+            //     }
+            function showUser(Users){
+                let result = "<table><tr><th>Name</th><th>Email</th></tr>";
+                const div = document.getElementById("lol");
+                Users.forEach(obj => {
+                
+                result += "<tr><td>"+obj.name+"</td><td>" + obj.email +"</td></tr>"
+                });
+                result += "</table>"
+                div.innerHTML = result;
+            }
+            
+
+
+
+
+    </script>
+</body>
+
+</html>

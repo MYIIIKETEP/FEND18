@@ -1,0 +1,14 @@
+
+    {
+        "id"    :1,
+        "name"  :"Denis",
+        "userName"  : "MYIIIKETEP",
+        "email"     : "Denis.jakusjev@gmail.com",
+        "phone"     : "0704925240",
+        "company"   :{
+            "name"  :"KDT",
+            "adress":"Nybrogatan 3",
+            "website":"https://vk.com/qrait"
+        }
+        
+    }

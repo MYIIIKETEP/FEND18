@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>jQuery AJAX</h1>
+    <p id='demo'></p>
+    <button id="slide">AllDogs</button>
+    <div style="display:none" id=list></div>
+    <button id=randomButton>Randomize</button>
+    <div id=randomDog><p id='picture'></p></div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //.load подятгивает инфу из txt/json/xml
+            //load(ОТКУДА,функция)
+            //function(response, status, xhr){ status - Succes/Error, xhr - xhr объекn
+         $.getJSON('AJAXwithJQUERY.json', function(data){
+             console.log(data);
+             console.log(data.name);
+         $("#demo").html(data.name + " " + data.userName);
+         });
+        
+        //Как выписать всё предметы из JSON
+        $.getJSON("https://dog.ceo/api/breeds/list/all", function(data){
+            //I den här JSON objekt man får från länken det kommer ett stor objekt som heter message
+            //och där får man senare 
+            //index blir "MAIN Ras" Array blir till subRas
+            $.each(data.message, function(index, array){
+                $("#list").append("<li>"+ index +"</li>");
+            });
+        });
+       
+     
+       loadImg();
+       $("#randomButton").click(function(){
+       loadImg();
+       });
+
+
+
+        function loadImg(){
+    $.getJSON("https://dog.ceo/api/breeds/image/random", function(data){
+            console.log(data.message);
+            output= "<img src=" + data.message + " height=450 width=450>"
+         $("#picture").html(output);
+        });
+ }
+        $("#slide").click(function(){
+            $("#list").toggle();
+        })
+    });
+    </script>
+</body>
+</html>
