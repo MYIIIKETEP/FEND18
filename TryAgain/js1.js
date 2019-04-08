@@ -32,9 +32,11 @@ $.ajax({
         }
             
    
-    
-    document.getElementById('mainShopItems').innerHTML = shopItems;
+    $("#mainShopItems").html(shopItems);
 //Lägger in hela JSON objektet till LocalStorage
+
+
+
     $(".addToCart").click(function(){
         $(this).css("display","none");
         let thisitemID=parseInt($(this).parent().find("#thisID").text());

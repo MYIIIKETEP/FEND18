@@ -13,7 +13,7 @@ function load(){
     
    
     }
-    document.getElementById('itsTboDy1').innerHTML = listLoad;
+    $("#itsTboDy1").html(listLoad);
     $("#TotalPrice").html("Total Price: "+totalPrice);
             }
 
